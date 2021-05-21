@@ -7,7 +7,7 @@ import CartItem from "./CartItem";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount = `₹${cartCtx.totalAmount.toFixed(0)}`;
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemAddHandler = (item) => {
@@ -16,6 +16,11 @@ const Cart = (props) => {
 
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
+  };
+
+  const cartItemClear = () => {
+    cartCtx.emptyCart();
+    props.onOrderPlaced();
   };
 
   const cartItems = (
@@ -44,7 +49,11 @@ const Cart = (props) => {
         <button className={styles["button--alt"]} onClick={props.onCloseCart}>
           Close
         </button>
-        {hasItems && <button className={styles.button}>Order</button>}
+        {hasItems && (
+          <button className={styles.button} onClick={cartItemClear}>
+            Order
+          </button>
+        )}
       </div>
     </Modal>
   );

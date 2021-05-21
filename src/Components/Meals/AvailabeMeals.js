@@ -7,25 +7,25 @@ const DUMMY_MEALS = [
     id: "m1",
     name: "Vegan Caesar Salad",
     description: "Creamy and Delicious!",
-    price: 22.99,
+    price: 239,
   },
   {
     id: "m2",
     name: "Cucumber-Melon Soup",
     description: "Cool and Healthy!",
-    price: 16.5,
+    price: 149,
   },
   {
     id: "m3",
     name: "Vegan Chocolate Chip Cookies",
     description: "Perfect for a Sweet tooth!",
-    price: 12.99,
+    price: 89,
   },
   {
     id: "m4",
     name: "Mushroom-Quinoa Burger",
     description: "Healthy...and green...",
-    price: 18.99,
+    price: 120,
   },
 ];
 
